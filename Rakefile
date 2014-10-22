@@ -1,6 +1,6 @@
 require "bundler/gem_tasks"
 
-task : deafult => :spec
+task :default => :spec
 
 desc "Ejecutar las espectativas de la clase exam"
 task :spec do

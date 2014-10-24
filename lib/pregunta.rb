@@ -3,7 +3,7 @@ require "exam/simpleSelection.rb"
 
 class Pregunta
 
-	attr_reader :preg
+	attr_accessor :preg
 
 	def initialize(preg)
 

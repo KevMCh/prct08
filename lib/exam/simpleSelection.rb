@@ -1,11 +1,10 @@
 class SimpleSelection
 
-	attr_reader :enunciado, :op
+	attr_accessor :enunciado, :op
 
 	def initialize(enunciado, op)
 
-		@enunciado = enunciado
-		@op = op
+		@enunciado, @op  = enunciado, op
 
 	end
 

@@ -25,7 +25,7 @@ describe Exam do
 
 		it "Imprimir por pantalla" do
 
-			@p1.preg.impr.should eq("¿Cuál es el resultado de sumar 2 y 5?\na) 4\nb) 5\nc) 6\nd) Ninguna de las anteriores")
+			@p1.to_s.should eq("¿Cuál es el resultado de sumar 2 y 5?\na) 4\nb) 5\nc) 6\nd) Ninguna de las anteriores")
 		end 
 	end
 end

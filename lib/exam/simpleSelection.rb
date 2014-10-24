@@ -7,7 +7,5 @@ class SimpleSelection
 		@enunciado, @op  = enunciado, op
 
 	end
-
 end
-
 

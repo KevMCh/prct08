@@ -10,4 +10,10 @@ class Pregunta
 		@preg = preg
 
 	end
+
+	def to_s
+
+		"#{@preg.enunciado}\n#{@preg.improp}"
+
+	end
 end

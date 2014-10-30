@@ -27,6 +27,13 @@ describe Exam do
 		it "Imprimir por pantalla" do
 
 			@pregunta1.to_s.should eq("¿Cuál es el resultado de sumar 2 y 5?\na) 4\nb) 5\nc) 6\nd) Ninguna de las anteriores\n")
-		end 
+		end
+
+		it "Almacenar datos en nodo y nodo siguiente en el nodo" do
+
+			@node.get_dato.should eq(2)
+			@node.get_next.should eq(nil)
+		end
+
 	end
 end

@@ -1,4 +1,4 @@
-require "lib/pregunta.rb"
+require "lib/exam/simpleSelection"
 
 describe Exam do
 
@@ -6,8 +6,6 @@ describe Exam do
 
 		@pregunta1 = SimpleSelection.new("¿Cuál es el resultado de sumar 2 y 5?", ["a) 4", "b) 5","c) 6","d) Ninguna de las anteriores"])
 
-	
-	@p1 = Pregunta.new(@pregunta1)
 
 	end
 

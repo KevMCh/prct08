@@ -6,6 +6,8 @@ describe Exam do
 
 		@pregunta1 = SimpleSelection.new("¿Cuál es el resultado de sumar 2 y 5?", ["a) 4", "b) 5","c) 6","d) Ninguna de las anteriores"])
 
+		@list = Lista.new(2)
+
 
 	end
 
@@ -31,7 +33,8 @@ describe Exam do
 
 		it "Almacenar datos en nodo y nodo siguiente en el nodo" do
 
-			@node.get_dato.to_s.should eq(2)
+			@list.to_s.should eq(2)
+			
 		end
 
 	end

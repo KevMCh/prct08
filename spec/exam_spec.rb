@@ -1,10 +1,13 @@
 require "lib/exam/simpleSelection"
+require "lib/exam/lista"
 
 describe Exam do
 
 	before :each do
 
 		@pregunta1 = SimpleSelection.new("¿Cuál es el resultado de sumar 2 y 5?", ["a) 4", "b) 5","c) 6","d) Ninguna de las anteriores"])
+
+		@list = Lista.new(2)
 
 
 	end
@@ -31,8 +34,8 @@ describe Exam do
 
 		it "Almacenar datos en nodo y nodo siguiente en el nodo" do
 
-			@node.get_dato.should eq(2)
-			@node.get_next.should eq(nil)
+			@list.to_s.should eq(2)
+			
 		end
 
 	end

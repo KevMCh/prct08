@@ -4,18 +4,9 @@ class Lista
 	def initialize(val)
 
 
- 	@head = Node.new(val,)
+ 	@head = Node.new(val, nil)
 
 
 	end
-
-
-	def to_s
-
-	puts @head[:value]
-	puts @head[:next]
-
-        end
-
 end
 

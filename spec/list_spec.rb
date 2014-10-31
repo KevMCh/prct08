@@ -5,9 +5,9 @@ describe Exam do
 
 	before :each do 
 
-		@nodo = Node.new(2,nil)
-
 		@nodo1 = Node.new(4,nil)
+
+		@nodo = Node.new(2,@nodo1)
 	end
 
 	describe "Creacion clase lista" do

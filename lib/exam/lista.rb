@@ -1,17 +1,33 @@
 Node = Struct.new(:value, :next)
 class Lista
 
-	def initialize(val, siguiente)
+	def initialize(val)
 
 	
-		@head = Node.new(val, nil)
+		@head = Node.new(val)
 	
 	end
 
-	def push(valor)
+	def pop()
 
-		aux = Node.new(valor,@Inicio)
-		@Inicio = aux
+		aux = @head
+		@head = @head.next
+		return aux.value
+
+	end
+
+	def push(value)
+
+		aux = @head
+
+		while aux.next !nil
+
+		aux = aux.next
+
+		end
+
+		aux.next = Node.new(valor,nil)
+
 	end
 
 end

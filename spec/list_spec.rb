@@ -8,6 +8,9 @@ describe Exam do
 		@nodo1 = Node.new(4,nil)
 
 		@nodo = Node.new(2,@nodo1)
+
+		@milista = Lista.new(1)
+
 	end
 
 	describe "Creacion clase lista" do
@@ -18,9 +21,15 @@ describe Exam do
 
 		end
 
-		it "Añadir un segundo nodo a la lista" do
+		it "Extraer primer elemento" do
 
-			@nodo.next.should eq(@nodo1)
+			@milista.pop.should eq(1)
+
+		end
+
+		it "Añadir valor (push)" do
+
+			@milista.push(8).should    
 
 		end
 

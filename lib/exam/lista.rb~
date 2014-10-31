@@ -28,8 +28,24 @@ class Lista
 
 		end
 
-		aux.next = Node.new(valor,nil)
+		aux.next = Node.new(value,nil)
 
 	end
+
+	def to_s
+
+		aux = @head
+
+		while (aux.next !=nil)
+
+			aux.to_s
+
+			aux = aux.next
+
+		end
+
+	end
+
+
 end
 

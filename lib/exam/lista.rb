@@ -1,6 +1,8 @@
 Node = Struct.new(:value, :next)
 class Lista
 
+	attr_reader :head
+
 	def initialize(val)
 
 	
@@ -29,6 +31,5 @@ class Lista
 		aux.next = Node.new(valor,nil)
 
 	end
-
 end
 

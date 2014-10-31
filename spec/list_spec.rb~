@@ -40,8 +40,7 @@ describe Exam do
 		it "Añadir valor (push)" do
 
 			@listavac.push(4)
-			@listavac.head.value.should eq(0) 
-			@listavac.head.next.value.should eq(4)    
+			@listavac.head.should eq(@nodo1)    
 
 		end
 

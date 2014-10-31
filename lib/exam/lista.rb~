@@ -28,7 +28,7 @@ class Lista
 
 		end
 
-		aux.next = Node.new(value,nil)
+		aux.next = Node.new(valor,nil)
 
 	end
 end

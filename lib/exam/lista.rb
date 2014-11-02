@@ -49,13 +49,17 @@ class Lista
 
 	def to_s
 
-		aux = @head
+		impr(@head)
 
-		while (aux.next !=nil)
+	end
 
-			return aux.head.to_s
+	def impr(nodo)
 
-			aux = aux.next
+		print nodo.value 
+
+		if (nodo.next != nil) then
+
+			impr(nodo.next)
 
 		end
 

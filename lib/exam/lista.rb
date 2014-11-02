@@ -3,32 +3,47 @@ class Lista
 
 	attr_reader :head
 
-	def initialize(val)
+	def initialize()
 
 	
-		@head = Node.new(val)
+		@head
 	
 	end
 
 	def pop()
 
-		aux = @head
-		@head = @head.next
-		return aux.value
+		if(@head != nil)
+
+			aux = @head
+			@head = @head.next
+			return aux.value
+
+		else
+
+			return nil
+
+		end
 
 	end
 
 	def push(value)
 
-		aux = @head
+		if(@head != nil)
 
-		while (aux.next !=nil)
+			aux = @head
+
+			while (aux.next !=nil)
 
 			aux = aux.next
 
-		end
+			end
 
-		aux.next = Node.new(value,nil)
+			aux.next = Node.new(value, nil)
+		else
+
+			@head = Node.new(value, nil)
+
+		end
 
 	end
 
@@ -38,7 +53,7 @@ class Lista
 
 		while (aux.next !=nil)
 
-			return aux.to_s
+			return aux.head.to_s
 
 			aux = aux.next
 

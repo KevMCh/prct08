@@ -5,15 +5,13 @@ describe Exam do
 
 	before :each do 
 
-		@nodo1 = Node.new(4,nil)
+		@nodo = Node.new(7,nil)
 
-		@nodo = Node.new(2,@nodo1)
+		@milista = Lista.new()
+		
+		@milista.push(7)
 
-		@nodo2 = Node.new(7,nil)
-
-		@milista = Lista.new(4)
-
-		@listavac = Lista.new(0)
+		@listavac = Lista.new()
 
 	end
 
@@ -21,27 +19,26 @@ describe Exam do
 
 		it "Comprobacion de la cabeza de la lista" do
 
-			@milista.head.should eq(@nodo1)
+			@milista.head.should eq(@nodo)
 
 		end
 
 		it "Comprobacion del valor del nodo" do
 
-			@nodo2.value.should eq(7)
+			@nodo.value.should eq(7)
 
 		end
 
 		it "Extraer primer elemento" do
 
-			@milista.pop.should eq(4)
+			@milista.pop.should eq(7)
 
 		end
 
 		it "Añadir valor (push)" do
 
-			@listavac.push(4)
-			@listavac.head.value.should eq(0) 
-			@listavac.head.next.value.should eq(4)    
+			@listavac.push(0)
+			@listavac.head.value.should eq(0)     
 
 		end
 
@@ -91,7 +88,8 @@ describe Exam do
  			@NP4 = SimpleSelection.new(@p4,@opP4)
  			@NP5 = SimpleSelection.new(@p5,@opP5)
 
- 			Examen = Lista.new(@NP1)
+ 			Examen = Lista.new()
+			Examen.push(@NP1)
  			Examen.push(@NP2)
  			Examen.push(@NP3)
  			Examen.push(@NP4)

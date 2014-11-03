@@ -1,4 +1,5 @@
-Node = Struct.new(:value, :next)
+Node = Struct.new(:value, :next, :prev)
+
 class Lista
 
 	attr_reader :head
@@ -38,12 +39,27 @@ class Lista
 
 			end
 
-			aux.next = Node.new(value, nil)
+			aux.next = Node.new(value, nil, nil)
 		else
 
-			@head = Node.new(value, nil)
+			@head = Node.new(value, nil, nil)
 
 		end
+
+	end
+
+	def pushbefore(value)
+
+                if(@head != nil)
+
+                        nuevonodo = Node.new(value, @head, @head.prev)
+			@head.prev = nuevonodo
+
+                else
+
+                        @head = Node.new(value, nil, nil)
+
+                end
 
 	end
 

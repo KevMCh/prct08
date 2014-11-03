@@ -44,9 +44,10 @@ describe Exam do
 
 		it "Añadir valor antes" do
 
+			@listavac.push(0)
 			@listavac.pushbefore(6)
-			@listavac.head.should eq (0)
-			@listavac.prev.value eq (6)
+			@listavac.head.value.should eq (0)
+			@listavac.head.prev.value.should eq (6)
 
 		end
 

@@ -42,6 +42,14 @@ describe Exam do
 
 		end
 
+		it "Añadir valor antes" do
+
+			@listavac.pushbefore(6)
+			@listavac.head.should eq (0)
+			@listavac.prev.value eq (6)
+
+		end
+
 		it "Prueba para la siguiente relaciónn de preguntas de selección simple." do
 
  			@p1 = "1.-)¿Cuál es la salida del siguiente código Ruby?\nclass Xyz\n\tdef pots\n\t\t@nice\n\tend\nend\n\nxyz = Xyz.new\np xyz.pots"
@@ -95,7 +103,7 @@ describe Exam do
  			Examen.push(@NP4)
  			Examen.push(@NP5)
 
-			Examen.to_s.should eq(@NP1.to_s + @NP2.to_s + @NP3.to_s + @NP4.to_s + @NP5.to_s)
+			#Examen.to_s.should eq(@NP1.to_s + @NP2.to_s + @NP3.to_s + @NP4.to_s + @NP5.to_s)
 
 
 		end

@@ -35,9 +35,9 @@ class Lista
 
 			while (aux.next !=nil)
 
-			auxprev = aux
+				auxprev = aux
 
-			aux = aux.next
+				aux = aux.next
 
 			end
 
@@ -55,7 +55,7 @@ class Lista
                 if(@head != nil)
 
                         nuevonodo = Node.new(value, @head, @head.prev)
-			@head.prev = nuevonodo
+			@head = nuevonodo
 
                 else
 

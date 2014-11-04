@@ -1,19 +1,23 @@
-class SimpleSelection
+require_relative "pregunta"
 
-	attr_accessor :enunciado, :op
+class SimpleSelection < Pregunta
+
+	attr_accessor :op
 
 	def initialize(enunciado, op)
 
-	 @enunciado, @op  = enunciado, op
+		super(enunciado)
+		@op = op
 
 	end
 
 	def to_s
 
-	cadena ="#{@enunciado}\n"
+		cadena ="#{@enunciado}\n"
 
-	@op.each {|m| cadena += "#{m}\n"}
-	cadena
+		@op.each {|m| cadena += "#{m}\n"}
+	
+		cadena
         end
 
 	

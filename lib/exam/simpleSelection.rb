@@ -4,16 +4,9 @@ class SimpleSelection
 
 	def initialize(enunciado, op)
 
-
- 	
-
-
-
 	 @enunciado, @op  = enunciado, op
 
-
 	end
-
 
 	def to_s
 

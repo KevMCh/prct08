@@ -35,11 +35,13 @@ class Lista
 
 			while (aux.next !=nil)
 
+			auxprev = aux
+
 			aux = aux.next
 
 			end
 
-			aux.next = Node.new(value, nil, nil)
+			aux.next = Node.new(value, nil, auxprev)
 		else
 
 			@head = Node.new(value, nil, nil)
@@ -65,17 +67,18 @@ class Lista
 
 	def to_s
 
-		impr(@head)
+		cadena = "#{@head.value.to_s}"
 
-	end
+		aux = @head	
 
-	def impr(nodo)
+		while(aux.next != nil)
 
-		if (nodo !=nil)
+			aux = aux.next
+			cadena += "#{aux.value.to_s}"
 
-			 nodo.value.to_s
-
-		end
+		end	
+		
+		cadena
 
 	end
 end

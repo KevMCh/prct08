@@ -1,9 +1,9 @@
 require "bundler/gem_tasks"
 
-task :default => :speclista
+task :default => :spec
 
 desc "Ejecutar las espectativas de la clase lista"
-task :speclista do
+task :spec do
 sh "rspec -I. spec/list_spec.rb"
 end
 

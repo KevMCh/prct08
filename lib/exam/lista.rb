@@ -71,16 +71,12 @@ class Lista
 
 	def impr(nodo)
 
-		print nodo.value 
+		if (nodo !=nil)
 
-		if (nodo.next != nil) then
-
-			impr(nodo.next)
+			 nodo.value.to_s
 
 		end
 
 	end
-
-
 end
 

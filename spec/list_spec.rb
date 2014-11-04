@@ -104,7 +104,7 @@ describe Exam do
  			Examen.push(@NP4)
  			Examen.push(@NP5)
 
-			#Examen.to_s.should eq(@NP1.to_s + @NP2.to_s + @NP3.to_s + @NP4.to_s + @NP5.to_s)
+			Examen.to_s.should eq(@NP1.to_s + @NP2.to_s + @NP3.to_s + @NP4.to_s + @NP5.to_s)
 
 
 		end

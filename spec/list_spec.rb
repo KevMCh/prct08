@@ -5,7 +5,7 @@ describe Exam do
 
 	before :each do 
 
-		@nodo = Node.new(7,nil)
+		@nodo = Node.new(7,nil, nil)
 
 		@milista = Lista.new()
 		
@@ -19,35 +19,35 @@ describe Exam do
 
 		it "Comprobacion de la cabeza de la lista" do
 
-			@milista.head.should eq(@nodo)
+			expect(@milista.head).to eq(@nodo)
 
 		end
 
 		it "Comprobacion del valor del nodo" do
 
-			@nodo.value.should eq(7)
+			expect(@nodo.value).to eq(7)
 
 		end
 
 		it "Extraer primer elemento" do
 
-			@milista.pop.should eq(7)
+			expect(@milista.pop).to eq(7)
 
 		end
 
 		it "Añadir valor (push)" do
 
 			@listavac.push(0)
-			@listavac.head.value.should eq(0)     
+			expect(@listavac.head.value).to eq(0)     
 
 		end
 
 		it "Añadir valor antes" do
 
-			@listavac.push(0)
-			@listavac.pushbefore(6)
-			@listavac.head.value.should eq (0)
-			@listavac.head.prev.value.should eq (6)
+			@listavac.push(65)
+			@listavac.pushbefore(70)
+			expect(@listavac.head.value).to eq (70)
+			expect(@listavac.head.next.value).to eq (65)
 
 		end
 
@@ -104,11 +104,10 @@ describe Exam do
  			Examen.push(@NP4)
  			Examen.push(@NP5)
 
-			Examen.to_s.should eq(@NP1.to_s + @NP2.to_s + @NP3.to_s + @NP4.to_s + @NP5.to_s)
+			expect(Examen.to_s).to eq(@NP1.to_s + @NP2.to_s + @NP3.to_s + @NP4.to_s + @NP5.to_s)
 
 
 		end
 
 	end
 end
-

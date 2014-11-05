@@ -12,6 +12,8 @@ describe Exam do
 		@milista.push(7)
 
 		@listavac = Lista.new()
+		
+		@vf = Vf.new("2.-) Es apropiado que una clase Tablero herede de una clase Juego. \na) Cierto\nb) Falso\n")
 
 	end
 
@@ -48,6 +50,12 @@ describe Exam do
 			@listavac.pushbefore(70)
 			expect(@listavac.head.value).to eq (70)
 			expect(@listavac.head.next.value).to eq (65)
+
+		end
+		
+		it "Verdadero Falso" do
+			expect(@vf.to_s).to eq ("2.-) Es apropiado que una clase Tablero herede de una clase Juego. \na) Cierto\nb) Falso\n")
+	
 
 		end
 

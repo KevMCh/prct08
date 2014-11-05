@@ -9,6 +9,7 @@ class SimpleSelection < Pregunta
 		super(enunciado)
 		@op = op
 
+		#@verdaderoofalso = ["a) cierto","b) falso"]
 	end
 
 	def to_s

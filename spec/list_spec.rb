@@ -1,5 +1,5 @@
 require "spec_helper"
-require "lib/exam.rb"
+require "exam"
 
 describe Exam do
 

@@ -1,4 +1,4 @@
-require "lib/exam/simpleSelection"
+require "exam"
 
 describe Exam do
 

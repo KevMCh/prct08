@@ -73,6 +73,15 @@ class Lista
                 end
 
 	end
+	
+	def mulpushbefore(valores)
+
+                valores.each do |x| 
+                pushbefore(x)
+
+                end
+
+        end
 
 	def to_s
 

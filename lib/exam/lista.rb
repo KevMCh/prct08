@@ -49,6 +49,15 @@ class Lista
 		end
 
 	end
+	
+	def mulpush(valores)
+
+                valores.each do |x| 
+                push(x)
+
+                end
+
+        end
 
 	def pushbefore(value)
 
@@ -67,13 +76,14 @@ class Lista
 
 	def to_s
 
-		cadena = "#{@head.value.to_s }"
+		cadena = "#{@head.value.to_s}"
 
 		aux = @head	
 
 		while(aux.next != nil)
 
 			aux = aux.next
+			cadena += " "
 			cadena += "#{aux.value.to_s }"
 
 		end	

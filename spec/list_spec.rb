@@ -59,7 +59,7 @@ describe Exam do
 
 		end
 
-		it "Prueba para la siguiente relaciónn de preguntas de selección simple." do
+		it "Prueba para la siguiente relaciónn de preguntas de selección simple (imprimir de la 1 - 5 y de la 5 a la 1)." do
 
  			@p1 = "1.-)¿Cuál es la salida del siguiente código Ruby?\nclass Xyz\n\tdef pots\n\t\t@nice\n\tend\nend\n\nxyz = Xyz.new\np xyz.pots"
 			@opP1 = {
@@ -113,6 +113,8 @@ describe Exam do
  			Examen.push(@NP5)
 
 			expect(Examen.to_s).to eq(@NP1.to_s + @NP2.to_s + @NP3.to_s + @NP4.to_s + @NP5.to_s)
+			
+			expect(Exam.imprinver).to eq(@NP5.to_s + @NP4.to_s + @NP3.to_s + @NP2.to_s + @NP1.to_s)
 
 
 		end

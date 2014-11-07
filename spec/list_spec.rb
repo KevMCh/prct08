@@ -54,9 +54,9 @@ describe Exam do
 		
 		it "Pregunta verdadero falso" do
 			
-			@PVF = TrueFalse.new("Es apropiado que una clase Tablero herede de una clase Juego.")
+			@PVF = TrueFalse.new("2.-) Es apropiado que una clase Tablero herede de una clase Juego.")
 			
-			expect(@PVF.to_s).to eq ("2.-) Es apropiado que una clase Tablero herede de una clase Juego. \na) Cierto\nb) Falso\n")
+			expect(@PVF.to_s).to eq ("2.-) Es apropiado que una clase Tablero herede de una clase Juego.\na) Cierto\nb) Falso\n")
 	
 		end
 

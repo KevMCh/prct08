@@ -7,7 +7,7 @@ class  TrueFalse < Pregunta
 	def initialize(enunciado)
 
 		super(enunciado)
-		@verdfals = ['a) cierto','b) falso']
+		@verdfals = ['a) Cierto','b) Falso']
 	end
 
 	def to_s

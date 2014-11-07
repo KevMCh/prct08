@@ -42,6 +42,7 @@ class Lista
 			end
 
 			aux.next = Node.new(value, nil, auxprev)
+			
 		else
 
 			@head = Node.new(value, nil, nil)
@@ -100,6 +101,30 @@ class Lista
 		cadena
 
 	end
+	
+    def imprinver
+
+        aux = @head
+
+        while(aux.next != nil)
+
+        	aux = aux.next
+                
+        end
+
+        cadena = "#{aux.value.to_s}"
+
+        while(aux.prev != nil)
+
+            aux = aux.prev
+            cadena += " "
+            cadena += "#{aux.value.to_s}"
+
+        end
+
+        cadena
+
+    end
 	
 end
 

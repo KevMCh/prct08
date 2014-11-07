@@ -13,7 +13,6 @@ describe Exam do
 
 		@listavac = Lista.new()
 		
-		#@vf = Vf.new("2.-) Es apropiado que una clase Tablero herede de una clase Juego. \na) Cierto\nb) Falso\n")
 
 	end
 
@@ -53,11 +52,12 @@ describe Exam do
 
 		end
 		
-		it "Verdadero Falso" do
+		it "Pregunta verdadero falso" do
 			
-			expect(@vf.to_s).to eq ("2.-) Es apropiado que una clase Tablero herede de una clase Juego. \na) Cierto\nb) Falso\n")
+			@PVF = TrueFalse.new("Es apropiado que una clase Tablero herede de una clase Juego.")
+			
+			expect(@PVF.to_s).to eq ("2.-) Es apropiado que una clase Tablero herede de una clase Juego. \na) Cierto\nb) Falso\n")
 	
-
 		end
 
 		it "Introducir varios elementos despues" do
@@ -136,7 +136,7 @@ describe Exam do
 
 			expect(Examen.to_s).to eq(@NP1.to_s + " " + @NP2.to_s + " " + @NP3.to_s + " " + @NP4.to_s + " " +@NP5.to_s)
 			
-			#expect(Examen.imprinver).to eq(@NP5.to_s + " " + @NP4.to_s + " " + @NP3.to_s + " " + @NP2.to_s + " " +@NP1.to_s)
+			expect(Examen.imprinver).to eq(@NP5.to_s + " " + @NP4.to_s + " " + @NP3.to_s + " " + @NP2.to_s + " " +@NP1.to_s)
 
 		end
 

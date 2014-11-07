@@ -13,6 +13,16 @@ describe Exam do
 
 		@listavac = Lista.new()
 		
+		@PVF = TrueFalse.new("2.-) Es apropiado que una clase Tablero herede de una clase Juego.")
+ 		@preg1 = "1.-)¿Qúe día es hoy?"
+		@opPreg1 = {
+			"a" => "Lunes",
+			"b" => "Martes",
+			"c" => "Miercoles",
+			"d" => "..."
+		}
+		
+		@PSS = SimpleSelection.new(@preg1, @opPreg1)
 
 	end
 
@@ -54,10 +64,18 @@ describe Exam do
 		
 		it "Pregunta verdadero falso" do
 			
-			@PVF = TrueFalse.new("2.-) Es apropiado que una clase Tablero herede de una clase Juego.")
-			
 			expect(@PVF.to_s).to eq ("2.-) Es apropiado que una clase Tablero herede de una clase Juego.\na) Cierto\nb) Falso\n")
 	
+		end
+		
+		it "Comprobacion de clases" do
+			
+			expect(@PVF.is_a? Pregunta).to eq(true)
+			expect(@PSS.is_a? Pregunta).to eq(true)
+			expect(@PSS.instance_of? SimpleSelection).to eq(true)
+			expect(@PVF.instance_of? SimpleSelection).to eq(false)
+			expect(@PVF.instance_of? TrueFalse).to eq(true)
+			
 		end
 
 		it "Introducir varios elementos despues" do
@@ -137,6 +155,7 @@ describe Exam do
 			expect(Examen.to_s).to eq(@NP1.to_s + " " + @NP2.to_s + " " + @NP3.to_s + " " + @NP4.to_s + " " +@NP5.to_s)
 			
 			expect(Examen.imprinver).to eq(@NP5.to_s + " " + @NP4.to_s + " " + @NP3.to_s + " " + @NP2.to_s + " " +@NP1.to_s)
+			
 
 		end
 

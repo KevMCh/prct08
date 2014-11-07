@@ -35,13 +35,11 @@ class Lista
 
 			while (aux.next !=nil)
 
-				auxprev = aux
-
 				aux = aux.next
 
 			end
 
-			aux.next = Node.new(value, nil, auxprev)
+			aux.next = Node.new(value, nil, aux)
 			
 		else
 

@@ -2,13 +2,8 @@ require "bundler/gem_tasks"
 
 task :default => :spec
 
-desc "Ejecutar las espectativas de la clase lista"
-task :spec do
-sh "rspec -I. spec/list_spec.rb"
-end
-
 desc "Ejecutar las espectativas de la clase exam"
-task :specExam do
+task :spec do
 sh "rspec -I. spec/exam_spec.rb"
 end
 

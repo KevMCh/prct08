@@ -1,12 +1,14 @@
 require_relative "pregunta"
 
 class SimpleSelection < Pregunta
+	
+	include Comparable
 
 	attr_accessor :op
 
-	def initialize(enunciado, op)
+	def initialize(enunciado, op, dif = 0)
 
-		super(enunciado)
+		super(enunciado, dif)
 		@op = op
 
 	end

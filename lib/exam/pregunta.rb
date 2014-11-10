@@ -1,10 +1,13 @@
 class Pregunta
 
-	attr_accessor :enunciado
+	include Comparable
 
-	def initialize(enunciado)
+	attr_accessor :enunciado, :dificultad
+
+	def initialize(enunciado, dif = 0)
 
 		@enunciado = enunciado
+		@dificultad = dif
 
 	end
 
@@ -15,5 +18,13 @@ class Pregunta
 		cadena
 
 	end
+	
+	def <=>(other)
+		
+    	return nil unless other.is_a? Pregunta
+    	
+    	@dificultad <=> other.dificultad
+    	
+  end
 
 end

@@ -7,9 +7,9 @@ describe Exam do
 
 		#Preguntas iniciales para comprobar los dos tipos de pregunta
 
-		@pregunta1 = SimpleSelection.new("¿Cuál es el resultado de sumar 2 y 5?", ["a) 4", "b) 5","c) 6","d) Ninguna de las anteriores"])
-		
 		@PVF = TrueFalse.new("2.-) Es apropiado que una clase Tablero herede de una clase Juego.")
+
+		@pregunta1 = SimpleSelection.new("¿Cuál es el resultado de sumar 2 y 5?", ["a) 4", "b) 5","c) 6","d) Ninguna de las anteriores"])		
  		@preg1 = "1.-)¿Qúe día es hoy?"
 		@opPreg1 = {
 			"a" => "Lunes",
@@ -30,7 +30,11 @@ describe Exam do
 
 		@listavac = Lista.new()
 		
+		
+		
 		#Creación de las preguntas para comprobar la lista Exam
+		
+		
 		
 		@p1 = "1.-)¿Cuál es la salida del siguiente código Ruby?\nclass Xyz\n\tdef pots\n\t\t@nice\n\tend\nend\n\nxyz = Xyz.new\np xyz.pots"
 			@opP1 = {
@@ -38,12 +42,6 @@ describe Exam do
 				"b" => "nil",
 				"c" => "0",
 				"d" => "Ninguna de las anteriores"
-			}
-
-			@p2 = "2.-)La siguiente definicion de hash en Ruby es valida\nhash_raro = {\n\t[1,2,3] => Object.new(),\n\tHash.new => :toto\n}"
-			@opP2 = {
-				"a" => "Cierto",
-				"b" => "Falso",
 			}
 
 			@p3 = "3.-)¿Cual es la salida del siguiente codigo en Ruby?\nclass Array\n\tdef say_hi\n\t\t\"HEY!\"\n\tend\nend\n\np [1, \"bob\"].say_hi"
@@ -62,19 +60,14 @@ describe Exam do
 				"c" => "Un objeto",
 				"D" => "Ninguna de las anteriores"
 			}
+			
+			
 
-			@p5 ="5.-)Es apropiado que una clase Tablero herede de una clase juego."
-
-			@opP5 ={
-				"a" => "Cierto",
-				"b" => "Falso"
-			}
-
-			@NP1 = SimpleSelection.new(@p1,@opP1)
- 			@NP2 = SimpleSelection.new(@p2,@opP2)
- 			@NP3 = SimpleSelection.new(@p3,@opP3)
- 			@NP4 = SimpleSelection.new(@p4,@opP4)
- 			@NP5 = SimpleSelection.new(@p5,@opP5)
+			@NP1 = SimpleSelection.new(@p1,@opP1, 3)
+ 			@NP2 = TrueFalse.new("2.-)La siguiente definicion de hash en Ruby es valida\nhash_raro = {\n\t[1,2,3] => Object.new(),\n\tHash.new => :toto\n}", 4)
+ 			@NP3 = SimpleSelection.new(@p3,@opP3, 4)
+ 			@NP4 = SimpleSelection.new(@p4,@opP4, 8)
+ 			@NP5 = TrueFalse.new("5.-)Es apropiado que una clase Tablero herede de una clase juego.", 7)
 		
 		
 
@@ -120,37 +113,37 @@ describe Exam do
 	
 	describe "# Comparaciones entre preguntas" do
 		
-	    it "El punto (1,1) es menor que el punto (2,2)" do
+	    it "Pregunta menor" do
 	    	
-	    	test = @p1 < @p2
+	    	test = @NP1 < @NP2
       		test.should eq(true)
     	
     	end
     	
-	    it "El punto (1,1) es menor o igual que el punto (2,2)" do
+	    it "Pregunta menor o igual" do
 	      
-	      test = @p1 <= @p2
+	      test = @NP2 <= @NP3
 	      test.should eq(true)
 	    
 	    end
 	    
-	    it "El punto (2,2) es mayor que el punto (1,1)" do
+	    it "Pregunta mayor" do
 	    
-	      test = @p2 > @p1
-	      test.should eq(true)
+	      test = @NP5 > @NP4
+	      test.should eq(false)
 	    
 	    end
 	    
-	    it "El punto (2,2) es mayor o igual que el punto (1,1)" do
+	    it "Mayor o igual" do
 	      
-	      test = @p2 >= @p1
+	      test = @NP2 >= @NP1
 	      test.should eq(true)
 	    
 	    end
 	    
-	    it "El punto (1,1) es igual al punto (1,1)" do
+	    it "Preguntas iguales" do
 	    
-	      test = @p1 == @p3
+	      test = @NP2 == @NP3
 	      test.should eq(true)
 	      
     	end

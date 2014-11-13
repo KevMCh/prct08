@@ -219,7 +219,16 @@ describe Exam do
 			
 			expect(Examen.imprinver).to eq(@NP5.to_s + " " + @NP4.to_s + " " + @NP3.to_s + " " + @NP2.to_s + " " +@NP1.to_s)
 			
-
+		
+		end
+		
+		it "Prueba enumerable maximo" do
+		
+			expect(Examen.max).to eq(@NP4)
+		end
+		
+		it "Prueba enumerable minimo" do
+			expect(Examen.min).to eq(@NP1)
 		end
 
 	end

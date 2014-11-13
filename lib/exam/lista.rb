@@ -1,23 +1,23 @@
 Node = Struct.new(:value, :next, :prev)
 
+class Node
+	
+	include Comparable
+
+	def <=>(other)
+
+    	value <=> other.value
+    	
+    end
+
+end
+
 class Lista
 	
 	include Enumerable
 	
-	def each
-		
-		aux = @head
-		while(aux.next != nil)
-		yield aux.value  
-		aux = aux.next 
-		
-		end
-	end 	
-
 	attr_reader :head
 	
-	
-
 	def initialize()
 
 	
@@ -137,6 +137,18 @@ class Lista
         cadena
 
     end
+	
+	def each
+		
+		aux = @head
+		
+		while(aux.next != nil)
+		
+			yield aux.value  
+			aux = aux.next 
+		
+		end
+	end 
 	
 end
 

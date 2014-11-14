@@ -1,3 +1,6 @@
+# encoding: utf-8
+
+
 require "exam"
 
 describe Exam do
@@ -144,7 +147,7 @@ describe Exam do
 	    it "Preguntas iguales" do
 	    
 	      test = @NP2 == @NP3
-	      test.should eq(true)
+	      test.should eq(false)
 	      
     	end
   end
@@ -229,6 +232,10 @@ describe Exam do
 		
 		it "Prueba enumerable minimo" do
 			expect(Examen.min).to eq(@NP1)
+		end
+		
+		it "Prueba enumerable all" do
+			expect(Examen.all?).to eq(true)
 		end
 
 	end

@@ -1,17 +1,5 @@
 Node = Struct.new(:value, :next, :prev)
 
-class Node
-	
-	include Comparable
-
-	def <=>(other)
-
-    	value <=> other.value
-    	
-    end
-
-end
-
 class Lista
 	
 	include Enumerable

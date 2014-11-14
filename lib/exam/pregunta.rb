@@ -25,6 +25,14 @@ class Pregunta
     	
     	@dificultad <=> other.dificultad
     	
-  end
+  	end
+  	
+  	def ==(other)
+  	
+  		(@dificultad == other.dificultad) && (@enunciado == other.enunciado)
+  			
+  	end	
+  
+  
 
 end

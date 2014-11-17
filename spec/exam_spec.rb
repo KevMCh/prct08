@@ -81,19 +81,19 @@ describe Exam do
 
 		it "Almacenamos correctamente la pregunta" do
 
-			@pregunta1.enunciado.should eq("¿Cuál es el resultado de sumar 2 y 5?")
+			expect(@pregunta1.enunciado).to eq("¿Cuál es el resultado de sumar 2 y 5?")
 
 		end
 
 		it "Almacenamos correctamente las opciones" do
 
-			@pregunta1.op.should eq(["a) 4","b) 5","c) 6","d) Ninguna de las anteriores"])
+			expect(@pregunta1.op).to eq(["a) 4","b) 5","c) 6","d) Ninguna de las anteriores"])
 
 		end
 
 		it "Imprimir por pantalla" do
 
-			@pregunta1.to_s.should eq("¿Cuál es el resultado de sumar 2 y 5?\na) 4\nb) 5\nc) 6\nd) Ninguna de las anteriores\n")
+			expect(@pregunta1.to_s).to eq("¿Cuál es el resultado de sumar 2 y 5?\na) 4\nb) 5\nc) 6\nd) Ninguna de las anteriores\n")
 		end
 		
 		it "Pregunta verdadero falso" do
@@ -119,35 +119,35 @@ describe Exam do
 	    it "Pregunta menor" do
 	    	
 	    	test = @NP1 < @NP2
-      		test.should eq(true)
+      		expect(test).to eq(true)
     	
     	end
     	
 	    it "Pregunta menor o igual" do
 	      
 	      test = @NP2 <= @NP3
-	      test.should eq(true)
+	      expect(test).to eq(true)
 	    
 	    end
 	    
 	    it "Pregunta mayor" do
 	    
 	      test = @NP5 > @NP4
-	      test.should eq(false)
+	      expect(test).to eq(false)
 	    
 	    end
 	    
 	    it "Mayor o igual" do
 	      
 	      test = @NP2 >= @NP1
-	      test.should eq(true)
+	      expect(test).to eq(true)
 	    
 	    end
 	    
 	    it "Preguntas iguales" do
 	    
 	      test = @NP2 == @NP3
-	      test.should eq(false)
+	      expect(test).to eq(false)
 	      
     	end
   end

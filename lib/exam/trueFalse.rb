@@ -6,9 +6,9 @@ class  TrueFalse < Pregunta
 
 	attr_accessor :verdfals
 
-	def initialize(enunciado, dif = 0)
+	def initialize(enunciado, dif = 0, correcta)
 
-		super(enunciado, dif)
+		super(enunciado, dif, correcta)
 		@verdfals = ['a) Cierto','b) Falso']
 	end
 

@@ -6,9 +6,9 @@ class SimpleSelection < Pregunta
 
 	attr_accessor :op
 
-	def initialize(enunciado, op, dif = 0)
+	def initialize(enunciado, op, dif = 0, correcta)
 
-		super(enunciado, dif)
+		super(enunciado, dif, correcta)
 		@op = op
 
 	end

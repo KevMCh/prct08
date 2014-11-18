@@ -2,12 +2,13 @@ class Pregunta
 
 	include Comparable
 
-	attr_accessor :enunciado, :dificultad
+	attr_accessor :enunciado, :dificultad, :correcta
 
-	def initialize(enunciado, dif = 0)
+	def initialize(enunciado, dif = 0, correcta)
 
 		@enunciado = enunciado
 		@dificultad = dif
+		@correcta = correcta
 
 	end
 

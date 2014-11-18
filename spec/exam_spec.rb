@@ -10,9 +10,9 @@ describe Exam do
 
 		#Preguntas iniciales para comprobar los dos tipos de pregunta
 
-		@PVF = TrueFalse.new("2.-) Es apropiado que una clase Tablero herede de una clase Juego.")
+		@PVF = TrueFalse.new("2.-) Es apropiado que una clase Tablero herede de una clase Juego.", "b")
 
-		@pregunta1 = SimpleSelection.new("¿Cuál es el resultado de sumar 2 y 5?", ["a) 4", "b) 5","c) 6","d) Ninguna de las anteriores"])		
+		@pregunta1 = SimpleSelection.new("¿Cuál es el resultado de sumar 2 y 5?", ["a) 4", "b) 5","c) 6","d) Ninguna de las anteriores"], "d")		
  		@preg1 = "1.-)¿Qúe día es hoy?"
 		@opPreg1 = {
 			"a" => "Lunes",
@@ -21,7 +21,7 @@ describe Exam do
 			"d" => "..."
 		}
 		
-		@PSS = SimpleSelection.new(@preg1, @opPreg1)
+		@PSS = SimpleSelection.new(@preg1, @opPreg1, "d")
 		
 		#Elementos para comprobar las listas con sus respectivos nodos
 		
@@ -32,8 +32,6 @@ describe Exam do
 		@milista.push(7)
 
 		@listavac = Lista.new()
-		
-		
 		
 		#Creación de las preguntas para comprobar la lista Exam
 		
@@ -66,11 +64,11 @@ describe Exam do
 			
 			
 
-			@NP1 = SimpleSelection.new(@p1,@opP1, 3)
- 			@NP2 = TrueFalse.new("2.-)La siguiente definicion de hash en Ruby es valida\nhash_raro = {\n\t[1,2,3] => Object.new(),\n\tHash.new => :toto\n}", 4)
- 			@NP3 = SimpleSelection.new(@p3,@opP3, 4)
- 			@NP4 = SimpleSelection.new(@p4,@opP4, 8)
- 			@NP5 = TrueFalse.new("5.-)Es apropiado que una clase Tablero herede de una clase juego.", 7)
+			@NP1 = SimpleSelection.new(@p1,@opP1, 3, "b")
+ 			@NP2 = TrueFalse.new("2.-)La siguiente definicion de hash en Ruby es valida\nhash_raro = {\n\t[1,2,3] => Object.new(),\n\tHash.new => :toto\n}", 4, "b")
+ 			@NP3 = SimpleSelection.new(@p3,@opP3, 4, "c")
+ 			@NP4 = SimpleSelection.new(@p4,@opP4, 8, "c")
+ 			@NP5 = TrueFalse.new("5.-)Es apropiado que una clase Tablero herede de una clase juego.", 7, "a")
 		
 		
 

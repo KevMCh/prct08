@@ -50,7 +50,7 @@ describe Exam do
 				"a" => "1",
 				"b" => "Bob",
 				"c" => "HEY!",
-				"D" => "Ninguna de las anteriores"
+				"d" => "Ninguna de las anteriores"
 			}
 
 			@p4 = "4.-)¿Cual es el tipo del objeto en el siguiente codigo en Ruby?\nclass Objeto\nend"
@@ -59,7 +59,7 @@ describe Exam do
 				"a" => "Una instancia de la clase Class",
 				"b" => "Una constante",
 				"c" => "Un objeto",
-				"D" => "Ninguna de las anteriores"
+				"d" => "Ninguna de las anteriores"
 			}
 			
 			
@@ -70,7 +70,14 @@ describe Exam do
  			@NP4 = SimpleSelection.new(@p4,@opP4, 8, "c")
  			@NP5 = TrueFalse.new("5.-)Es apropiado que una clase Tablero herede de una clase juego.", 7, "a")
 		
+			Examen = Lista.new()
+			Examen.push(@NP1)
+ 			Examen.push(@NP2)
+ 			Examen.push(@NP3)
+ 			Examen.push(@NP4)
+ 			Examen.push(@NP5)
 		
+			#@Test = Exam.new("LPP", Examen)
 
 	end
 
@@ -209,13 +216,6 @@ describe Exam do
 
 		it "Prueba para la siguiente relaciónn de preguntas de selección simple (imprimir de la 1 - 5 y de la 5 a la 1)." do
 
- 			Examen = Lista.new()
-			Examen.push(@NP1)
- 			Examen.push(@NP2)
- 			Examen.push(@NP3)
- 			Examen.push(@NP4)
- 			Examen.push(@NP5)
-
 			expect(Examen.to_s).to eq(@NP1.to_s + " " + @NP2.to_s + " " + @NP3.to_s + " " + @NP4.to_s + " " +@NP5.to_s)
 			
 			expect(Examen.imprinver).to eq(@NP5.to_s + " " + @NP4.to_s + " " + @NP3.to_s + " " + @NP2.to_s + " " +@NP1.to_s)
@@ -237,5 +237,37 @@ describe Exam do
 		end
 
 	end
+	
+	describe "# Comprobaciones clase Examen" do
+		
+		it "Atributo titulo" do
+	    	
+	    	
+      		expect(@Test.tit).to eq("LPP")
+    	
+    	end
+		
+	    it "Atributo nota" do
+	    	
+	    	
+      		expect(@Test.nota).to eq(0)
+    	
+    	end
+    	
+    	it "Atributo lista" do
+	    	
+	    	
+      		expect(@Test.instance_of? Lista).to eq(true)
+    	
+    	end
+    	
+    	it "Atributo número de preguntas" do
+	    	
+	    	
+      		expect(@Test.nPreg).to eq(0)
+    	
+    	end
+    	
+  end
 	
 end

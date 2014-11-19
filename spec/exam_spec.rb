@@ -70,14 +70,14 @@ describe Exam do
  			@NP4 = SimpleSelection.new(@p4,@opP4, 8, "c")
  			@NP5 = TrueFalse.new("5.-)Es apropiado que una clase Tablero herede de una clase juego.", 7, "a")
 		
-			Examen = Lista.new()
-			Examen.push(@NP1)
- 			Examen.push(@NP2)
- 			Examen.push(@NP3)
- 			Examen.push(@NP4)
- 			Examen.push(@NP5)
+			@Examen = Lista.new()
+			@Examen.push(@NP1)
+ 			@Examen.push(@NP2)
+ 			@Examen.push(@NP3)
+ 			@Examen.push(@NP4)
+ 			@Examen.push(@NP5)
 		
-			#@Test = Exam.new("LPP", Examen)
+			@Test = CExam.new("LPP", @Examen)
 
 	end
 
@@ -216,24 +216,24 @@ describe Exam do
 
 		it "Prueba para la siguiente relaciónn de preguntas de selección simple (imprimir de la 1 - 5 y de la 5 a la 1)." do
 
-			expect(Examen.to_s).to eq(@NP1.to_s + " " + @NP2.to_s + " " + @NP3.to_s + " " + @NP4.to_s + " " +@NP5.to_s)
+			expect(@Examen.to_s).to eq(@NP1.to_s + " " + @NP2.to_s + " " + @NP3.to_s + " " + @NP4.to_s + " " +@NP5.to_s)
 			
-			expect(Examen.imprinver).to eq(@NP5.to_s + " " + @NP4.to_s + " " + @NP3.to_s + " " + @NP2.to_s + " " +@NP1.to_s)
+			expect(@Examen.imprinver).to eq(@NP5.to_s + " " + @NP4.to_s + " " + @NP3.to_s + " " + @NP2.to_s + " " +@NP1.to_s)
 			
 		
 		end
 		
 		it "Prueba enumerable maximo" do
 		
-			expect(Examen.max).to eq(@NP4)
+			expect(@Examen.max).to eq(@NP4)
 		end
 		
 		it "Prueba enumerable minimo" do
-			expect(Examen.min).to eq(@NP1)
+			expect(@Examen.min).to eq(@NP1)
 		end
 		
 		it "Prueba enumerable all" do
-			expect(Examen.all?).to eq(true)
+			expect(@Examen.all?).to eq(true)
 		end
 
 	end
@@ -257,7 +257,7 @@ describe Exam do
     	it "Atributo lista" do
 	    	
 	    	
-      		expect(@Test.instance_of? Lista).to eq(true)
+      		expect(@Test.preguntasExam.instance_of? Lista).to eq(true)
     	
     	end
     	

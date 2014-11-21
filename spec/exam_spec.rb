@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+require 'spec_helper.rb'
 
 require "exam"
 
@@ -284,7 +284,7 @@ describe Exam do
   	    it "Clase exam" do
 	    	
 	    	
-      		@MakeTest.realizar
+      	#	@MakeTest.realizar
       		
 		end
   	

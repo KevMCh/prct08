@@ -78,6 +78,8 @@ describe Exam do
  			@Examen.push(@NP5)
 		
 			@Test = CExam.new("LPP", @Examen)
+			
+			@MakeTest = Interface.new(@Test)
 
 	end
 
@@ -268,6 +270,25 @@ describe Exam do
     	
     	end
     	
-  end
-	
+  	end
+  	
+  	describe "#Comprobaciones clase Interface" do
+  	
+  		it "Atributo interface" do
+	    	
+	    	
+      		expect(@MakeTest.exam.instance_of? CExam).to eq(true)
+    	
+    	end
+  	
+  	    it "Clase exam" do
+	    	
+	    	
+      		@MakeTest.realizar
+      		
+		end
+  	
+	end
+  
 end
+

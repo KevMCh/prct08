@@ -79,7 +79,7 @@ describe Exam do
 		
 			@Test = CExam.new("LPP", @Examen)
 			
-			@MakeTest = Interface.new(@Test)
+			@MakeTest = Interface.new(@Test, ["b", "b","c","c", "a"])
 
 	end
 
@@ -283,8 +283,8 @@ describe Exam do
   	
   	    it "Clase exam" do
 	    	
-	    	
-      	#	@MakeTest.realizar
+	    	#@MakeTest.realizar()
+      		#expect(@MakeTest.nota).to eq("Nota final:\n5")
       		
 		end
   	

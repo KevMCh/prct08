@@ -2,25 +2,24 @@ class Interface
     
     attr_reader :exam
     
-    def initialize(cexam)
+    def initialize(cexam, respuestas)
         
         @exam = cexam
+        @respuestas = respuestas
        
     end
    
     def realizar
         
-        puts "#{@exam.tit}"
-      
         aux = @exam.obtenerPreg
+        
+        i = 0
       
         while (aux.to_s!=nil)
         
-            puts aux.to_s
-            
-            respuesta = gets
+            comprobacionRespuesta(@respuestas[i], aux) 
         
-            comprobacionRespuesta(respuesta, aux) 
+            i = i + 1
         
             aux = @exam.obtenerPreg
         
@@ -29,28 +28,29 @@ class Interface
         nota
        
     end
+    
+    def nota
+       
+        puts "Nota final: "
+       
+        return @exam.nota
+   
+    end
    
     private 
    
     def comprobacionRespuesta(respuesta, pregunta)
         
-        if(respuesta==pregunta.correcta)
+        if(respuesta == pregunta.correcta)
             
-            @exam.respuesta(true)
+            @exam.respuestaComp(true)
           
         else
           
-            @exam.respuesta(false)
+            @exam.respuestaComp(false)
           
         end
       
     end
    
-    def nota
-       
-        puts "Nota final: "
-       
-        return (@exam.nota/@exam.nPreg)
-   
-    end
 end

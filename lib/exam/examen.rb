@@ -27,7 +27,7 @@ class CExam
         
     end
     
-    def respuesta(correcta)
+    def respuestaComp(correcta)
         
         if(correcta)
             

@@ -12,6 +12,11 @@ class CExam
     	
         @nPreg = 0
         
+        @block = Proc.new{
+        
+        @preguntasExam.popend()
+    }
+        
     end
     
     def to_s
@@ -44,8 +49,8 @@ class CExam
     def obtenerInver
         
         @nPreg = @nPreg + 1
-        return @preguntasExam.popend()
         
+        return @block.call
     end
     
 end

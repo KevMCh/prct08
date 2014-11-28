@@ -17,7 +17,7 @@ class Interface
       
         while (aux.to_s!=nil)
         
-            comprobacionRespuesta(@respuestas[i], aux) 
+            comprobacionRespuesta(i, aux) 
         
             i = i + 1
         
@@ -39,9 +39,9 @@ class Interface
    
     private 
    
-    def comprobacionRespuesta(respuesta, pregunta)
+    def comprobacionRespuesta(nresp, pregunta)
         
-        if(respuesta==pregunta.correcta)
+        if(@respuesta[nresp]==pregunta.correcta)
             
             @exam.respuesta(true)
           

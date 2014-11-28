@@ -289,6 +289,16 @@ describe Exam do
 		end
   	
 	end
+	
+	describe "#Programacion funcional" do
+		
+		it "Orden inverso, primer elemento" do
+		
+			expect(@Test.obtenerInver.to_s).to eq(@NP5.to_s)
+		
+  		end
+  	
+	end
   
 end
 

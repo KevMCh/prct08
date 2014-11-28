@@ -40,4 +40,12 @@ class CExam
         end
        
     end
+    
+    def obtenerInver
+        
+        @nPreg = @nPreg + 1
+        return @preguntasExam.popend()
+        
+    end
+    
 end

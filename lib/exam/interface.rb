@@ -33,7 +33,7 @@ class Interface
        
         puts "Nota final: "
        
-        return @exam.nota
+        return ((@exam.nota/@exam.nPreg) * 10)
    
     end
    
@@ -41,13 +41,13 @@ class Interface
    
     def comprobacionRespuesta(respuesta, pregunta)
         
-        if(respuesta == pregunta.correcta)
+        if(respuesta==pregunta.correcta)
             
-            @exam.respuestaComp(true)
+            @exam.respuesta(true)
           
         else
           
-            @exam.respuestaComp(false)
+            @exam.respuesta(false)
           
         end
       

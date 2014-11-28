@@ -125,6 +125,25 @@ class Lista
         cadena
 
     end
+    
+    def popend
+    	
+    	aux = @head
+
+        while(aux.next != nil)
+
+        	aux = aux.next
+                
+        end
+        
+        final = aux
+        
+        aux = aux.prev
+        aux.next = nil
+        
+        return final.value
+    	
+    end
 	
 	def each
 		

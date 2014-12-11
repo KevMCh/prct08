@@ -299,6 +299,27 @@ describe Exam do
   		end
   	
 	end
+	
+	describe "#Comprobaciones prct11" do
+  	
+  		it "Clase Quiz" do
+	    	
+      		quiz = Quiz.new("Cuestionario") do 
+      			
+      			simpleselectionQuestion "¿En que año Cristobal Colón descubrió América?",
+      				:wrong => "1942",
+      				:wrong => "1492",
+      				:wrong => "1808",
+      				:right => "1914"
+      			
+      			truefalseQuestion "¿0+8=8?",
+      				"V"
+      				
+      		end
+      			
+    	end
+  	
+	end
   
 end
 

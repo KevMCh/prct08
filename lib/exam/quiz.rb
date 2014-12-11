@@ -30,17 +30,18 @@ class Quiz
 
         opciones.each do |key, val|
             
-            if (key != "right")
+            if ("#{key}" == "right")
                 
                 op[count]= val
+                correcta="#{val}"
                 count = count + 1
                 
+
+
             else
                 
                 op[count]= val
-                correcta = val
                 count = count + 1
-
             end
         end
         

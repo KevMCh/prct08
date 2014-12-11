@@ -304,20 +304,20 @@ describe Exam do
   	
   		it "Clase Quiz" do
 	    	
-      		quiz = Quiz.new("Cuestionario") do 
+      		quiz = Quiz.new do 
       			
       			simpleselectionQuestion "¿En que año Cristobal Colón descubrió América?",
-      				:wrong => "1942",
-      				:wrong => "1492",
-      				:wrong => "1808",
+      				:a => "1942",
+      				:b => "1492",
+      				:c => "1808",
       				:right => "1914"
       			
       			truefalseQuestion "¿0+8=8?",
-      				"V"
+      				"Cierto"
       				
       		end
       		
-      		expect(quiz.to_s).to eq("Cuestionario\n¿En que año Cristobal Colón descubrió América?\na)1942\nb)1492\nc)1808\nd)1914\n¿0+8=8?\na)Verdadero\nb)Falso")
+      		expect(quiz.to_s).to eq("¿En que año Cristobal Colón descubrió América?\n1942\n1492\n1808\n1914\n ¿0+8=8?\na) Cierto\nb) Falso\n")
     	end
   	
 	end

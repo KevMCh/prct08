@@ -316,7 +316,8 @@ describe Exam do
       				"V"
       				
       		end
-      			
+      		
+      		expect(quiz.to_s).to eq("Cuestionario\n¿En que año Cristobal Colón descubrió América?\na)1942\nb)1492\nc)1808\nd)1914\n¿0+8=8?\na)Verdadero\nb)Falso")
     	end
   	
 	end

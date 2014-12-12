@@ -307,17 +307,17 @@ describe Exam do
       		quiz = Quiz.new do 
       			
       			simpleselectionQuestion "¿En que año Cristobal Colón descubrió América?",
-      				:a => "1942",
-      				:b => "1492",
-      				:c => "1808",
-      				:right => "1914"
+      				wrong => "1942",
+      				wrong => "1492",
+      				right => "1914",
+      				wrong => "1808"
       			
       			truefalseQuestion "¿0+8=8?",
       				"Cierto"
       				
       		end
       		
-      		expect(quiz.to_s).to eq("¿En que año Cristobal Colón descubrió América?\n1942\n1492\n1808\n1914\n ¿0+8=8?\na) Cierto\nb) Falso\n")
+      		expect(quiz.to_s).to eq("¿En que año Cristobal Colón descubrió América?\n1942\n1492\n1914\n1808\n ¿0+8=8?\na) Cierto\nb) Falso\n")
     	end
   	
 	end

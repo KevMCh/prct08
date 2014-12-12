@@ -1,9 +1,12 @@
 class Quiz
     
+    RIGHT = :right
+    WRONG = :wrong
+    
     def initialize(&block)
         
         @listapreg = Lista.new()
-        
+        @counter = 0
         if block_given?
             if block.arity == 1
                 yield self
@@ -11,6 +14,8 @@ class Quiz
                 instance_eval &block
             end
         end
+        
+        @respcorrecta
         
     @examen = CExam.new("Cuestionario",@listapreg)
 
@@ -25,25 +30,16 @@ class Quiz
     def simpleselectionQuestion(enunciado, opciones = {})
         
         op =[]
-        count = 0
-        correcta = nil
-
+        cnt=0
         opciones.each do |key, val|
             
-            if ("#{key}" == "right")
-                
-                op[count]= val
-                correcta="#{val}"
-                count = count + 1
-                
-
-
-            else
-                
-                op[count]= val
-                count = count + 1
-            end
+            op[cnt] = "#{val}"
+            cnt +=1
+           
         end
+        
+        correcta = op[@respcorrecta]
+        @respcorrecta = nil
         
         preg = SimpleSelection.new(enunciado, op, correcta)
         
@@ -59,4 +55,17 @@ class Quiz
         
     end
     
+    def wrong
+        
+        @counter += 1
+        [@counter, WRONG]
+        
+    end
+    
+    def right
+        
+        @respcorrecta = @counter
+        @counter+= 1
+        [@counter, RIGHT]
+    end
 end

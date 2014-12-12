@@ -15,9 +15,7 @@ class Quiz
             end
         end
         
-        @respcorrecta
-        
-    @examen = CExam.new("Cuestionario",@listapreg)
+        @examen = CExam.new("Cuestionario",@listapreg)
 
     end
     
@@ -31,15 +29,20 @@ class Quiz
         
         op =[]
         cnt=0
+        correcta =nil
         opciones.each do |key, val|
             
             op[cnt] = "#{val}"
+            
+            if(key[1]==RIGHT)
+               
+               correcta = "#{val}"
+                
+            end
+            
             cnt +=1
-           
+            
         end
-        
-        correcta = op[@respcorrecta]
-        @respcorrecta = nil
         
         preg = SimpleSelection.new(enunciado, op, correcta)
         
@@ -64,7 +67,6 @@ class Quiz
     
     def right
         
-        @respcorrecta = @counter
         @counter+= 1
         [@counter, RIGHT]
     end

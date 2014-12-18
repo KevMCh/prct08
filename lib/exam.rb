@@ -6,6 +6,7 @@ require "exam/pregunta.rb"
 require "exam/examen.rb"
 require "exam/interface.rb"
 require "exam/quiz.rb"
+require "orange.rb"
 
 module Exam
 

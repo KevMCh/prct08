@@ -1,10 +1,7 @@
 class Orange
     
-    attr_reader :edad, :altura, :numnaranjas, @naranAnual
+    attr_reader :edad, :altura, :numnaranjas
     
-    ADULTO = 5
-    MUERTO = 10
-   
     def initialize()
         
         @edad = 0
@@ -12,30 +9,41 @@ class Orange
         @numnaranjas = 0
         @mutex = Mutex.new
         @naranAnual = []
+        @vivo = true
+        @JOVEN = 5
+        @ADULTO = 7
+        @MUERTO = 10
         
     end
     
     def uno_mas
         
-        if MUERTO > @edad
+        if @vivo
             
             @edad += 1
+            
+            if(@edad > @MUERTO)
+                
+                @vivo = false
+                
+            end
+            
             @altura += 0.75
             
-            if ((@edad>5) && (@edad<7))
+            if @edad.between?(@JOVEN,@ADULTO)
                 
                 @mutex.synchronize{ 
                     
                     @numnaranjas += 3
-                    @naranAnual[@edad] += 3 
+                    @naranAnual << 3 
                     
                 }
-            else
+            elsif @edad.between?(@ADULTO,@MUERTO)
                 
                 @mutex.synchronize{
                     
                     @numnaranjas +=5
-                    @naranAnual[@edad] += 5
+                    @naranAnual << 5
                 }
                 
             end
@@ -43,11 +51,35 @@ class Orange
         else
             
             @altura = 0
-            @mutex.synchronize{ 
+            @mutex.synchronize{
+                
                 @numnaranjas = 0
                 
             }
             
         end
     end
+    
+    def recolectar_una
+        
+        if !@vivo
+            
+            return "El naranjero se ha secado"
+            
+        elsif @numnaranjas != 0
+            
+            @mutex.synchronize{
+                
+                @numnaranjas -= 1
+                
+            }
+            
+            return "Que buena que estaba"
+            
+            else
+                
+                return "No hay naranjas"
+                
+            end
+        end
 end

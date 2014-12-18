@@ -1,6 +1,6 @@
 class Orange
     
-    attr_reader :edad, :altura, :numnaranjas
+    attr_reader :edad, :altura, :numnaranjas, @naranAnual
     
     ADULTO = 5
     MUERTO = 10
@@ -11,6 +11,7 @@ class Orange
         @altura = 0
         @numnaranjas = 0
         @mutex = Mutex.new
+        @naranAnual = []
         
     end
     
@@ -25,7 +26,8 @@ class Orange
                 
                 @mutex.synchronize{ 
                     
-                    @numnaranjas += 3 
+                    @numnaranjas += 3
+                    @naranAnual[@edad] += 3 
                     
                 }
             else
@@ -33,6 +35,7 @@ class Orange
                 @mutex.synchronize{
                     
                     @numnaranjas +=5
+                    @naranAnual[@edad] += 5
                 }
                 
             end

@@ -20,8 +20,8 @@ describe 'Naranjero' do
     it 'Método uno_más' do
         
         @Naranjo.uno_mas
-        except(@Naranjo.edad).to eq(1)
-        except(@Naranjo.altura).to eq(0.75)
+        expect(@Naranjo.edad).to eq(1)
+        expect(@Naranjo.altura).to eq(0.75)
         
     end
      

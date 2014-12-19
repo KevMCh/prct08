@@ -9,6 +9,15 @@ describe 'Naranjero' do
         
         @NaranjoH = Orange.new
         
+        @crecer = Thread.new do
+            
+            4.times do
+                
+                @NaranjoH.uno_mas
+                
+            end
+        end
+        
     end
     
     it 'Atributos de la clase.' do

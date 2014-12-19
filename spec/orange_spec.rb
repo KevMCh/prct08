@@ -18,6 +18,15 @@ describe 'Naranjero' do
             end
         end
         
+        @recolectar = Thread.new do
+            
+            2.times do
+                
+                @NaranjoH.recolectar_una
+                
+            end
+        end
+        
     end
     
     it 'Atributos de la clase.' do
@@ -43,20 +52,20 @@ describe 'Naranjero' do
         expect(@NaranjoP.edad).to eq(2)
         expect(@NaranjoP.altura).to eq(1.5)
         expect(@NaranjoP.numnaranjas).to eq(0)
-        expect(@NaranjoP.recolectar_una).to eq("No hay naranjas")
+        expect(@NaranjoP.recolectar_una).to eq("No hay naranjas\n")
         @NaranjoP.uno_mas
         @NaranjoP.uno_mas
         @NaranjoP.uno_mas
         @NaranjoP.uno_mas
         @NaranjoP.uno_mas
         expect(@NaranjoP.numnaranjas).to eq(9)
-        expect(@NaranjoP.recolectar_una).to eq("Que buena que estaba")
+        expect(@NaranjoP.recolectar_una).to eq("Que buena que estaba\n")
         @NaranjoP.uno_mas
         @NaranjoP.uno_mas
         @NaranjoP.uno_mas
         @NaranjoP.uno_mas
         expect(@NaranjoP.edad).to eq(11)
-        expect(@NaranjoP.recolectar_una).to eq("El naranjero se ha secado")
+        expect(@NaranjoP.recolectar_una).to eq("El naranjero se ha secado\n")
         @NaranjoP.uno_mas
         expect(@NaranjoP.numnaranjas).to eq(0)
         
@@ -72,4 +81,5 @@ describe 'Naranjero' do
         expect(@NaranjoH.numnaranjas).to eq(0) 
         
     end
+    
 end

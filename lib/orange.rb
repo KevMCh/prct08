@@ -64,7 +64,7 @@ class Orange
         
         if !@vivo
             
-            return "El naranjero se ha secado"
+            return "El naranjero se ha secado\n"
             
         elsif @numnaranjas != 0
             
@@ -74,11 +74,11 @@ class Orange
                 
             }
             
-            return "Que buena que estaba"
+            return "Que buena que estaba\n"
             
             else
                 
-                return "No hay naranjas"
+                return "No hay naranjas\n"
                 
             end
         end
